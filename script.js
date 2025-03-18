@@ -1,16 +1,16 @@
 function showTips(subject) {
-  const tipsDiv = document.getElementById(`tips-${subject}`);
-  if (tipsDiv.style.display === "none" || tipsDiv.style.display === "") {
-    tipsDiv.style.display = "block";
-    tipsDiv.innerHTML = getTips(subject);
-  } else {
-    tipsDiv.style.display = "none";
-  }
+    const tipsDiv = document.getElementById(`tips-${subject}`);
+    if (tipsDiv.style.display === "none" || tipsDiv.style.display === "") {
+        tipsDiv.style.display = "block";
+        tipsDiv.innerHTML = getTips(subject);
+    } else {
+        tipsDiv.style.display = "none";
+    }
 }
 
 function getTips(subject) {
-  const tips = {
-    algebra: `
+    const tips = {
+        algebra: `
             <ul>
                 <li>Pratique a resolução de equações.</li>
                 <li>Estude as propriedades das operações.</li>
@@ -18,7 +18,7 @@ function getTips(subject) {
                 <li>Resolva problemas do dia a dia que envolvam álgebra.</li>
             </ul>
         `,
-    geometria: `
+        geometria: `
             <ul>
                 <li>Desenhe figuras geométricas para entender melhor.</li>
                 <li>Estude as propriedades dos ângulos e triângulos.</li>
@@ -26,7 +26,7 @@ function getTips(subject) {
                 <li>Resolva problemas práticos envolvendo áreas e perímetros.</li>
             </ul>
         `,
-    calculo: `
+        calculo: `
             <ul>
                 <li>Compreenda os conceitos de limite e continuidade.</li>
                 <li>Pratique a diferenciação e a integração.</li>
@@ -34,7 +34,7 @@ function getTips(subject) {
                 <li>Utilize vídeos e tutoriais online para reforçar o aprendizado.</li>
             </ul>
         `,
-    trigonometria: `
+        trigonometria: `
             <ul>
                 <li>Estude as razões trigonométricas (seno, cosseno, tangente).</li>
                 <li>Pratique a resolução de triângulos retângulos.</li>
@@ -42,7 +42,7 @@ function getTips(subject) {
                 <li>Resolva problemas práticos que envolvam ângulos e distâncias.</li>
             </ul>
         `,
-    estatistica: `
+        estatistica: `
             <ul>
                 <li>Aprenda a coletar e organizar dados.</li>
                 <li>Estude medidas de tendência central (média, mediana, moda).</li>
@@ -50,7 +50,7 @@ function getTips(subject) {
                 <li>Utilize gráficos para visualizar dados.</li>
             </ul>
         `,
-    probabilidade: `
+        probabilidade: `
             <ul>
                 <li>Entenda os conceitos básicos de probabilidade.</li>
                 <li>Estude eventos independentes e dependentes.</li>
@@ -58,7 +58,7 @@ function getTips(subject) {
                 <li>Utilize a regra da soma e a regra do produto.</li>
             </ul>
         `,
-    "matematica-financeira": `
+        'matematica-financeira': `
             <ul>
                 <li>Compreenda os conceitos de juros simples e compostos.</li>
                 <li>Estude a diferença entre capitalização e desconto.</li>
@@ -66,23 +66,23 @@ function getTips(subject) {
                 <li>Utilize planilhas para simular cenários financeiros.</li>
             </ul>
         `
-  };
-  return tips[subject] || "Dicas não disponíveis.";
+    };
+    return tips[subject] || "Dicas não disponíveis.";
 }
 
 function submitForm(event) {
-  event.preventDefault(); // Impede o envio padrão do formulário
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
+    event.preventDefault(); // Impede o envio padrão do formulário
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
 
-  // Aqui você pode adicionar lógica para enviar os dados para um servidor, se necessário
+    // Aqui você pode adicionar lógica para enviar os dados para um servidor, se necessário
 
-  // Exibir uma resposta ao usuário
-  const responseDiv = document.getElementById("formResponse");
-  responseDiv.innerHTML = `<p>Obrigado, ${name}! Sua mensagem foi enviada com sucesso.</p>`;
-  responseDiv.style.color = "green";
+    // Exibir uma resposta ao usuário
+    const responseDiv = document.getElementById('formResponse');
+    responseDiv.innerHTML = `<p>Obrigado, ${name}! Sua mensagem foi enviada com sucesso.</p>`;
+    responseDiv.style.color = "green";
 
-  // Limpar o formulário
-  document.getElementById("contactForm").reset();
+    // Limpar o formulário
+    document.getElementById('contactForm').reset();
 }
