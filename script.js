@@ -1,88 +1,50 @@
-function showTips(subject) {
-    const tipsDiv = document.getElementById(`tips-${subject}`);
-    if (tipsDiv.style.display === "none" || tipsDiv.style.display === "") {
-        tipsDiv.style.display = "block";
-        tipsDiv.innerHTML = getTips(subject);
-    } else {
-        tipsDiv.style.display = "none";
+const people = [
+    {
+        name: "1° Akuma",
+        evaluation: "Staff top 1, não há de que reclamar, prossiga assim."
+    },
+    {
+        name: "2° Wynter",
+        evaluation: "Staff bom, também não há muito de reclamar, apenas aumente mais a frequência das parcerias."
+    },
+    {
+        name: "3° Jocca",
+        evaluation: "Não há de que reclamar, se prosseguir assim, poderá subir no top staffs ou receber promoções."
+    },
+    {
+        name: "4° Iza",
+        evaluation: "Não há de que reclamar, é ativa(o) e sempre está monitorando, continue assim."
+    },
+    {
+        name: "5° Sweet",
+        evaluation: "Staff que esperavámos muito mais, por favor, melhore, fique mais online e colabore com o servidor, caso contrário terá o cargo removido."
     }
+];
+
+function displayPeople() {
+    const peopleList = document.getElementById('people-list');
+    people.forEach(person => {
+        const listItem = document.createElement('li');
+        listItem.textContent = person.name;
+        listItem.onclick = () => showInfo(person);
+        peopleList.appendChild(listItem);
+    });
 }
 
-function getTips(subject) {
-    const tips = {
-        algebra: `
-            <ul>
-                <li>Pratique a resolução de equações.</li>
-                <li>Estude as propriedades das operações.</li>
-                <li>Utilize jogos e aplicativos para aprender de forma divertida.</li>
-                <li>Resolva problemas do dia a dia que envolvam álgebra.</li>
-            </ul>
-        `,
-        geometria: `
-            <ul>
-                <li>Desenhe figuras geométricas para entender melhor.</li>
-                <li>Estude as propriedades dos ângulos e triângulos.</li>
-                <li>Use softwares de geometria dinâmica para explorar conceitos.</li>
-                <li>Resolva problemas práticos envolvendo áreas e perímetros.</li>
-            </ul>
-        `,
-        calculo: `
-            <ul>
-                <li>Compreenda os conceitos de limite e continuidade.</li>
-                <li>Pratique a diferenciação e a integração.</li>
-                <li>Estude aplicações do cálculo em problemas reais.</li>
-                <li>Utilize vídeos e tutoriais online para reforçar o aprendizado.</li>
-            </ul>
-        `,
-        trigonometria: `
-            <ul>
-                <li>Estude as razões trigonométricas (seno, cosseno, tangente).</li>
-                <li>Pratique a resolução de triângulos retângulos.</li>
-                <li>Utilize a unidade circular para entender ângulos.</li>
-                <li>Resolva problemas práticos que envolvam ângulos e distâncias.</li>
-            </ul>
-        `,
-        estatistica: `
-            <ul>
-                <li>Aprenda a coletar e organizar dados.</li>
-                <li>Estude medidas de tendência central (média, mediana, moda).</li>
-                <li>Compreenda a variabilidade dos dados (desvio padrão, variância).</li>
-                <li>Utilize gráficos para visualizar dados.</li>
-            </ul>
-        `,
-        probabilidade: `
-            <ul>
-                <li>Entenda os conceitos básicos de probabilidade.</li>
-                <li>Estude eventos independentes e dependentes.</li>
-                <li>Pratique problemas de probabilidade com dados e cartas.</li>
-                <li>Utilize a regra da soma e a regra do produto.</li>
-            </ul>
-        `,
-        'matematica-financeira': `
-            <ul>
-                <li>Compreenda os conceitos de juros simples e compostos.</li>
-                <li>Estude a diferença entre capitalização e desconto.</li>
-                <li>Aprenda a calcular prestações e amortizações.</li>
-                <li>Utilize planilhas para simular cenários financeiros.</li>
-            </ul>
-        `
-    };
-    return tips[subject] || "Dicas não disponíveis.";
+function showInfo(person) {
+
+    const info = document.getElementById('info');
+
+    info.innerHTML = `<strong>Nome:</strong> ${person.name}<br>
+
+                      <strong>Avaliação:</strong> ${person.evaluation}`;
+
+    document.getElementById('person-info').classList.remove('hidden');
 }
 
-function submitForm(event) {
-    event.preventDefault(); // Impede o envio padrão do formulário
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    // Aqui você pode adicionar lógica para enviar os dados para um servidor, se necessário
-
-    // Exibir uma resposta ao usuário
-    const responseDiv = document.getElementById('formResponse');
-    responseDiv.innerHTML = `<p>Obrigado, ${name}! Sua mensagem foi enviada com sucesso.</p>`;
-    responseDiv.style.color = "green";
-
-    // Limpar o formulário
-    document.getElementById('contactForm').reset();
+function closeInfo() {
+    document.getElementById('person-info').classList.add('hidden');
 }
+
+// Chama a função para exibir as pessoas na lista
+displayPeople();
