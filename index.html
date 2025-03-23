@@ -1,103 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guia de Estudos de Matemática</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação atualizada staffs FP (Por Expurgue)</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <header>
-    <h1>Guia de Estudos de Matemática</h1>
-    <nav>
-      <ul>
-        <li><a href="#algebra">Álgebra</a></li>
-        <li><a href="#geometria">Geometria</a></li>
-        <li><a href="#calculo">Cálculo</a></li>
-        <li><a href="#trigonometria">Trigonometria</a></li>
-        <li><a href="#estatistica">Estatística</a></li>
-        <li><a href="#probabilidade">Probabilidade</a></li>
-        <li><a href="#matematica-financeira">Matemática Financeira</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <section id="algebra">
-      <h2>Álgebra</h2>
-      <p>A álgebra é uma parte da matemática que lida com símbolos e as regras para manipular esses símbolos.</p>
-      <button onclick="showTips('algebra')">Dicas de Estudo</button>
-      <div class="tips" id="tips-algebra"></div>
-    </section>
-
-    <section id="geometria">
-      <h2>Geometria</h2>
-      <p>A geometria é a área da matemática que estuda as formas, tamanhos e propriedades dos espaços.</p>
-      <button onclick="showTips('geometria')">Dicas de Estudo</button>
-      <div class="tips" id="tips-geometria"></div>
-    </section>
-
-    <section id="calculo">
-      <h2>Cálculo</h2>
-      <p>O cálculo é uma área da matemática que estuda as taxas de variação e a acumulação de quantidades.</p>
-      <button onclick="showTips('calculo')">Dicas de Estudo</button>
-      <div class="tips" id="tips-calculo"></div>
-    </section>
-
-    <section id="trigonometria">
-      <h2>Trigonometria</h2>
-      <p>A trigonometria estuda as relações entre os ângulos e os lados dos triângulos.</p>
-      <button onclick="showTips('trigonometria')">Dicas de Estudo</button>
-      <div class="tips" id="tips-trigonometria"></div>
-    </section>
-
-    <section id="estatistica">
-      <h2>Estatística</h2>
-      <p>A estatística é a ciência que coleta, analisa e interpreta dados.</p>
-      <button onclick="showTips('estatistica')">Dicas de Estudo</button>
-      <div class="tips" id="tips-estatistica"></div>
-    </section>
-
-    <section id="probabilidade">
-      <h2>Probabilidade</h2>
-      <p>A probabilidade é o estudo da incerteza e da chance de eventos ocorrerem.</p>
-      <button onclick="showTips('probabilidade')">Dicas de Estudo</button>
-      <div class="tips" id="tips-probabilidade"></div>
-    </section>
-
-    <section id="matematica-financeira">
-      <h2>Matemática Financeira</h2>
-      <p>A matemática financeira aplica conceitos matemáticos para resolver problemas financeiros.</p>
-      <button onclick="showTips('matematica-financeira')">Dicas de Estudo</button>
-      <div class="tips" id="tips-matematica-financeira"></div>
-    </section>
-
-    <section id="contato">
-      <h2>Contato (Em manutenção)</h2>
-      <form id="contactForm" onsubmit="submitForm(event)">
-        <label for="name">Nome:</label>
-        <input type="text" id="name" required>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" required>
-
-        <label for="message">Mensagem:</label>
-        <textarea id="message" required></textarea>
-
-        <button type="submit">Enviar</button>
-      </form>
-      <div id="formResponse" class="response"></div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Guia de Estudos de Matemática</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <div class="container">
+        <h1>Avaliação atualizada staffs FP (Por Expurgue)</h1>
+        <ul id="people-list"></ul>
+        <div id="person-info" class="hidden">
+            <h2>Informações da Pessoa</h2>
+            <p id="info"></p>
+            <button onclick="closeInfo()">Fechar</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
-
 </html>
