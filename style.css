@@ -1,33 +1,74 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #1a1a1a; /* Preto */
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #6a0dad, #8e44ad);
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-    text-align: center;
-    background-color: #4b0082; /* Roxo */
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
+}
+
+header {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
 }
 
 h1 {
+    margin: 0;
     font-size: 2.5em;
-    margin-bottom: 20px;
+    color: #ffffff;
 }
 
-p {
-    font-size: 1.2em;
+.avaliacoes {
+    list-style-type: none;
+    padding: 0;
+}
+
+.avaliacoes li {
+    background-color: rgba(255, 255, 255, 0.2); /* Aumenta a opacidade para melhor contraste */
     margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.avaliacoes li:hover {
+    transform: scale(1.02);
+    background-color: rgba(255, 255, 255, 0.3); /* Aumenta a opacidade ao passar o mouse */
+}
+
+.nome {
+    cursor: pointer;
+    color: #ffffff; /* Mantém o nome branco */
+    font-weight: 700;
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease; /* Adiciona transição para o brilho e tamanho */
+}
+
+.nome:hover {
+    color: #cccccc; /* Cor cinza ao passar o mouse */
+    transform: scale(1.01); /* Aumenta o tamanho do texto em 5% ao passar o mouse */
+    text-shadow: 0 0 10px rgba(142, 68, 173, 0.8), 0 0 20px rgba(142, 68, 173, 0.6); /* Efeito de brilho */
+}
+
+.avaliacao {
+    display: none; /* Oculta a avaliação inicialmente */
+    opacity: 0; /* Inicia com opacidade 0 */
+    transition: opacity 0.3s ease; /* Transição suave de opacidade */
+}
+
+.avaliacao.show {
+    display: block; /* Mostra a avaliação */
+    opacity: 1; /* Anima a opacidade para 1 */
 }
